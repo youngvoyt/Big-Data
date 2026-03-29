@@ -120,12 +120,6 @@ raw_df = spark.read.option("header", "true").option("inferSchema", "true").csv(c
 raw_df.printSchema()
 raw_df.show(5, truncate=False)
 ```
-
-В отчет рекомендуется вставить:
-
-- скриншот схемы данных `printSchema()`;
-- скриншот первых строк `show(5)`.
-
 ### 3. Предобработка данных
 
 Для решения задачи были выбраны только необходимые поля. Затем выполнялись:
