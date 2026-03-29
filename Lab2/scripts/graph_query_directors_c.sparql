@@ -1,0 +1,11 @@
+PREFIX ex: <http://example.org/movies#>
+
+SELECT ?filmTitle ?directorName
+WHERE {
+  ?film a ex:Film ;
+        ex:title ?filmTitle ;
+        ex:directedBy ?director .
+  ?director ex:name ?directorName .
+  FILTER regex(?directorName, "^C", "i")
+}
+ORDER BY ?directorName ?filmTitle

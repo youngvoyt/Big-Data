@@ -1,0 +1,20 @@
+PREFIX ex: <http://example.org/movies#>
+
+SELECT ?personName (COUNT(DISTINCT ?film) AS ?filmCount)
+WHERE {
+  VALUES ?personName { "Christopher Nolan" "Leonardo DiCaprio" }
+
+  ?film a ex:Film .
+
+  {
+    ?film ex:directedBy ?person .
+  }
+  UNION
+  {
+    ?film ex:hasActor ?person .
+  }
+
+  ?person ex:name ?personName .
+}
+GROUP BY ?personName
+ORDER BY DESC(?filmCount)

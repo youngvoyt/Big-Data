@@ -1,0 +1,96 @@
+@prefix ex: <http://example.org/movies#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:ChristopherNolan a ex:Director ;
+    ex:name "Christopher Nolan" .
+
+ex:CameronCrowe a ex:Director ;
+    ex:name "Cameron Crowe" .
+
+ex:ClintEastwood a ex:Director ;
+    ex:name "Clint Eastwood" .
+
+ex:JamesCameron a ex:Director ;
+    ex:name "James Cameron" .
+
+ex:MartinScorsese a ex:Director ;
+    ex:name "Martin Scorsese" .
+
+ex:LeonardoDiCaprio a ex:Actor ;
+    ex:name "Leonardo DiCaprio" .
+
+ex:MatthewMcConaughey a ex:Actor ;
+    ex:name "Matthew McConaughey" .
+
+ex:CillianMurphy a ex:Actor ;
+    ex:name "Cillian Murphy" .
+
+ex:KateWinslet a ex:Actor ;
+    ex:name "Kate Winslet" .
+
+ex:MargotRobbie a ex:Actor ;
+    ex:name "Margot Robbie" .
+
+ex:TomCruise a ex:Actor ;
+    ex:name "Tom Cruise" .
+
+ex:Film_Inception a ex:Film ;
+    ex:title "Inception" ;
+    ex:releaseYear "2010"^^xsd:gYear ;
+    ex:genre "Sci-Fi" ;
+    ex:directedBy ex:ChristopherNolan ;
+    ex:hasActor ex:LeonardoDiCaprio .
+
+ex:Film_Interstellar a ex:Film ;
+    ex:title "Interstellar" ;
+    ex:releaseYear "2014"^^xsd:gYear ;
+    ex:genre "Sci-Fi" ;
+    ex:directedBy ex:ChristopherNolan ;
+    ex:hasActor ex:MatthewMcConaughey .
+
+ex:Film_Oppenheimer a ex:Film ;
+    ex:title "Oppenheimer" ;
+    ex:releaseYear "2023"^^xsd:gYear ;
+    ex:genre "Biography" ;
+    ex:directedBy ex:ChristopherNolan ;
+    ex:hasActor ex:CillianMurphy .
+
+ex:Film_AlmostFamous a ex:Film ;
+    ex:title "Almost Famous" ;
+    ex:releaseYear "2000"^^xsd:gYear ;
+    ex:genre "Drama" ;
+    ex:directedBy ex:CameronCrowe .
+
+ex:Film_MysticRiver a ex:Film ;
+    ex:title "Mystic River" ;
+    ex:releaseYear "2003"^^xsd:gYear ;
+    ex:genre "Crime" ;
+    ex:directedBy ex:ClintEastwood .
+
+ex:Film_Titanic a ex:Film ;
+    ex:title "Titanic" ;
+    ex:releaseYear "1997"^^xsd:gYear ;
+    ex:genre "Romance" ;
+    ex:directedBy ex:JamesCameron ;
+    ex:hasActor ex:LeonardoDiCaprio, ex:KateWinslet .
+
+ex:Film_TheWolfOfWallStreet a ex:Film ;
+    ex:title "The Wolf of Wall Street" ;
+    ex:releaseYear "2013"^^xsd:gYear ;
+    ex:genre "Biography" ;
+    ex:directedBy ex:MartinScorsese ;
+    ex:hasActor ex:LeonardoDiCaprio, ex:MargotRobbie .
+
+ex:Film_TheDeparted a ex:Film ;
+    ex:title "The Departed" ;
+    ex:releaseYear "2006"^^xsd:gYear ;
+    ex:genre "Crime" ;
+    ex:directedBy ex:MartinScorsese ;
+    ex:hasActor ex:LeonardoDiCaprio .
+
+ex:Film_VanillaSky a ex:Film ;
+    ex:title "Vanilla Sky" ;
+    ex:releaseYear "2001"^^xsd:gYear ;
+    ex:genre "Drama" ;
+    ex:directedBy ex:CameronCrowe ;
+    ex:hasActor ex:TomCruise .

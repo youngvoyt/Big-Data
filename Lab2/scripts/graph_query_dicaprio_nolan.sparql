@@ -1,0 +1,12 @@
+PREFIX ex: <http://example.org/movies#>
+
+SELECT ?filmTitle
+WHERE {
+  ?film a ex:Film ;
+        ex:title ?filmTitle ;
+        ex:directedBy ?director ;
+        ex:hasActor ?actor .
+  ?director ex:name "Christopher Nolan" .
+  ?actor ex:name "Leonardo DiCaprio" .
+}
+ORDER BY ?filmTitle
