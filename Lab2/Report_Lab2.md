@@ -11,7 +11,7 @@
 ```text
 .
 |-- docker-compose.yml
-|-- Report_Lab2.md 
+|-- README.md
 |-- data
 |   |-- movies_sample.ttl
 |   `-- sample_results.md
@@ -69,8 +69,9 @@ docker compose up -d
 | Сервис | Адрес |
 |---|---|
 | Mongo Express | `http://localhost:28203` |
-| MongoDB | `localhost:28204` |
-| Cassandra | `localhost:9042` |
+| Admin Mongo | `http://localhost:28204` |
+| Cassandra-Web | `http://localhost:28200` |
+| Cassandra CQL | `localhost:9042` |
 | GraphDB | `http://localhost:7200` |
 | Redis Commander | `http://localhost:28119` |
 
