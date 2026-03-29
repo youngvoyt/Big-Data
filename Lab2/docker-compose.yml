@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   mongo:
     image: mongo:7
@@ -8,8 +6,6 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin123
-    ports:
-      - "28204:27017"
     volumes:
       - mongo_data:/data/db
 
@@ -27,6 +23,19 @@ services:
     ports:
       - "28203:8081"
 
+  admin-mongo:
+    image: mrvautin/adminmongo:latest
+    container_name: lab2_admin_mongo
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      CONNECTIONSTRING: mongodb://admin:admin123@mongo:27017/admin
+      HOST: 0.0.0.0
+      PORT: 1234
+    ports:
+      - "28204:1234"
+
   cassandra:
     image: cassandra:4.1
     container_name: lab2_cassandra
@@ -37,6 +46,17 @@ services:
       CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
     ports:
       - "9042:9042"
+
+  cassandra-web:
+    image: ipushc/cassandra-web
+    container_name: lab2_cassandra_web
+    restart: unless-stopped
+    depends_on:
+      - cassandra
+    environment:
+      CASSANDRA_HOST_IP: cassandra
+    ports:
+      - "28200:3000"
 
   graphdb:
     image: ontotext/graphdb:10.7.3
