@@ -71,25 +71,6 @@ CSV-файл, который используется в работе: `retail_p
 1. Загрузите файл `lab_01.ipynb` в Google Colab.
 2. Выполните ячейки сверху вниз.
 3. Дождитесь загрузки датасета, обработки данных и построения графика.
-4. Сохраните скриншоты результатов для отчета.
-
-### Через Python-скрипт
-
-```python
-!pip install pyspark pandas matplotlib numpy kagglehub
-```
-
-```python
-import kagglehub
-from pathlib import Path
-
-dataset_path = kagglehub.dataset_download("suddharshan/retail-price-optimization")
-csv_path = str(next(Path(dataset_path).rglob("*.csv")))
-```
-
-```python
-!python lab1_pricing_analysis.py --input "$csv_path" --master "local[*]"
-```
 
 ## Ход работы
 
