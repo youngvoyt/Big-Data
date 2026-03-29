@@ -11,7 +11,7 @@
 ```text
 .
 |-- docker-compose.yml
-|-- README.md
+|-- Report_Lab2.md 
 |-- data
 |   |-- movies_sample.ttl
 |   `-- sample_results.md
